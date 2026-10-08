@@ -4,13 +4,14 @@ from PySide6.QtWidgets import QApplication
 
 from ui.main_window import MainWindow
 from printing.mock_printer import MockPrinter
+from printing.xp470b_printer import XP470BPrinter
 
 
 def main():
 
     app = QApplication(sys.argv)
 
-    printer = MockPrinter()
+    printer = XP470BPrinter(dry_run=True)
 
     window = MainWindow(
         printer=printer
